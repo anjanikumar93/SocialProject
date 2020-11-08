@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Tabbar from "./components/Tabbar";
+import { Route, Switch, Redirect } from "react-router-dom";
+import Mission from "./components/Mission";
+import Rockets from "./components/Rockets";
+import Stats from "./components/Stats";
+import About from "./components/About";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="Spacex">
+      <h4 className="space_launch">SpaceX Launch and Mission Viewer</h4>
+      <Tabbar />
+      <Switch>
+        <Route path="/" component={Mission} exact />
+        <Route path="/rockets" component={Rockets} exact />
+        <Route path="/stats" component={Stats} exact />
+        <Route path="/about" component={About} exact />
+        <Redirect to="/" />
+      </Switch>
     </div>
   );
 }
