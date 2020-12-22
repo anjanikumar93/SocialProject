@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  appbar: {
+    background: "#03a9f4",
+  },
   mission: {
     textDecoration: "none",
     color: "white",
@@ -38,7 +41,7 @@ const Tabbar = () => {
   return (
     <>
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar position="static" className={classes.appbar}>
           <Toolbar>
             <Typography variant="h6" className={classes.title}>
               <NavLink className={classes.mission} exact to="/">
